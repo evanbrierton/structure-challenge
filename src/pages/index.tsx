@@ -2,9 +2,9 @@
  * @component
  */
 
+import Assets from "@/components/Assets";
 import Chevron from "@/components/Chevron";
 import Navbar from "@/components/Navbar";
-import Trade from "@/components/Trade";
 
 const Homepage = () => {
   return (
@@ -45,7 +45,7 @@ const Homepage = () => {
           {/* Graph Placeholder */}
           <div className="w-[780px] h-[455px] bg-gray-6 rounded-xl" />
 
-          <Trade />
+          <Assets verb="buy" />
         </div>
 
         <div className="flex justify-between">
