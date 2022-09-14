@@ -3,6 +3,7 @@
  */
 
 import Navbar from "@/components/Navbar";
+import Trade from "@/components/Trade";
 
 const Homepage = () => {
   return (
@@ -55,10 +56,7 @@ const Homepage = () => {
           {/* Graph Placeholder */}
           <div className="w-[780px] h-[455px] bg-gray-6 rounded-xl" />
 
-          {/* Trade Placeholder */}
-          <div className="flex justify-center items-center w-[380px] h-[455px] text-gray-4 bg-white rounded-xl border border-gray-6">
-            <p>Component Goes Here</p>
-          </div>
+          <Trade />
         </div>
 
         <div className="flex justify-between">
