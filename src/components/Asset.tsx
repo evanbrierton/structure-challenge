@@ -1,10 +1,11 @@
 import { Instrument } from "@/types/api";
+import Image from "next/image";
 
 type Props = Instrument & { isStock?: boolean };
 
 const Asset = ({ name, symbol, value, amount, isStock = false }: Props) => {
   const getAmountColor = () => {
-    if (!isStock || amount === 0) return "text-gray-4";
+    if (!isStock) return "text-gray-4";
     if (amount > 0) return "text-green-4";
     return "text-red-4";
   };
@@ -20,7 +21,18 @@ const Asset = ({ name, symbol, value, amount, isStock = false }: Props) => {
       </div>
       <div className="flex flex-col justify-center items-end">
         <span className="text-body-2">{value}</span>
-        <span className={`text-body-3 ${getAmountColor()}`}>{amount}</span>
+        <span
+          className={`text-body-3 justify-between flex gap-1 items-center ${getAmountColor()}`}
+        >
+          {isStock && (
+            <Image
+              src={`/svg/${amount > 0 ? "up" : "down"}.svg`}
+              width={11}
+              height={6}
+            />
+          )}
+          {amount}
+        </span>
       </div>
     </div>
   );
