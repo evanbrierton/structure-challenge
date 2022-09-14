@@ -15,8 +15,16 @@ const Row = ({
   first = false,
   last = false,
 }: RowProps) => {
+  const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
+    if (event.key === "Enter") handleClick?.();
+  };
+
   return (
     <div
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="button"
       className={`${handleClick ? "hover:bg-gray-8 cursor-pointer" : ""} ${
         first ? "rounded-t-xl" : ""
       } ${
@@ -37,10 +45,14 @@ const Row = ({
   );
 };
 
-const CurrencySelect = () => {
+type Props = {
+  showAssets: () => void;
+};
+
+const CurrencySelect = ({ showAssets }: Props) => {
   return (
     <div className="flex flex-col justify-around w-[330px] h-[131px] rounded-xl border border-gray-6">
-      <Row label="Buy" currency="BTC" first handleClick={() => {}} />
+      <Row label="Buy" currency="BTC" first handleClick={showAssets} />
       <hr className="m-0 text-gray-6" />
       <button
         type="button"

@@ -2,10 +2,11 @@ import { useCoins, useStocks } from "../hooks/api";
 import Asset from "./Asset";
 
 type Props = {
-  verb: "buy" | "sell";
+  verb?: "buy" | "sell";
+  cancel: () => void;
 };
 
-const Assets = ({ verb }: Props) => {
+const Assets = ({ verb = "buy", cancel }: Props) => {
   const { data: stocks } = useStocks();
   const { data: coins } = useCoins();
 
@@ -33,6 +34,8 @@ const Assets = ({ verb }: Props) => {
       <button
         type="button"
         className="w-[100%] h-[57px] text-subtitle-1 text-red-4 rounded-xl border border-gray-6"
+        onClick={cancel}
+        tabIndex={0}
       >
         Cancel
       </button>

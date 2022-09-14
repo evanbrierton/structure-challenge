@@ -1,11 +1,10 @@
+import Chevron from "@/components/Chevron";
+import Navbar from "@/components/Navbar";
+import TradeContainer from "@/components/TradeContainer";
+
 /**
  * @component
  */
-
-import Assets from "@/components/Assets";
-import Chevron from "@/components/Chevron";
-import Navbar from "@/components/Navbar";
-
 const Homepage = () => {
   return (
     <div className="flex flex-col items-center w-full">
@@ -45,7 +44,7 @@ const Homepage = () => {
           {/* Graph Placeholder */}
           <div className="w-[780px] h-[455px] bg-gray-6 rounded-xl" />
 
-          <Assets verb="buy" />
+          <TradeContainer />
         </div>
 
         <div className="flex justify-between">

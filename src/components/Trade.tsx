@@ -1,6 +1,10 @@
 import CurrencySelect from "./CurrencySelect";
 
-const Trade = () => {
+type Props = {
+  showAssets: () => void;
+};
+
+const Trade = ({ showAssets }: Props) => {
   const renderBuySellButtons = () => (
     <div className="flex gap-2 justify-start items-center">
       <button type="button" className="font-medium border-b-2">
@@ -60,7 +64,7 @@ const Trade = () => {
       {renderBuySellButtons()}
       {renderValue()}
       {renderWallet()}
-      <CurrencySelect />
+      <CurrencySelect showAssets={showAssets} />
       {renderBuyButton()}
     </div>
   );
