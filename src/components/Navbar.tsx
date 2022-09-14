@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "./Logo";
+import Logo from "./svg/Logo";
 
 const Navbar = () => {
   const userInitials = "TE";

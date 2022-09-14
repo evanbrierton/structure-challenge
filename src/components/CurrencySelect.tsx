@@ -1,4 +1,4 @@
-import Chevron from "./Chevron";
+import Chevron from "./svg/Chevron";
 
 type RowProps = {
   label: string;

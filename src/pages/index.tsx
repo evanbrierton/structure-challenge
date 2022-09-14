@@ -1,4 +1,4 @@
-import Chevron from "@/components/Chevron";
+import Chevron from "@/components/svg/Chevron";
 import Navbar from "@/components/Navbar";
 import TradeContainer from "@/components/TradeContainer";
 
