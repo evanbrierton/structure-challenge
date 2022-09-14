@@ -1,4 +1,4 @@
-import Chevron from "./svg/Chevron";
+import Image from "next/image";
 
 type RowProps = {
   label: string;
@@ -39,7 +39,7 @@ const Row = ({
         </div>
       </div>
       <button type="button" className="rounded-full">
-        <Chevron />
+        <Image src="/svg/chevron.svg" width={7} height={14} />
       </button>
     </div>
   );

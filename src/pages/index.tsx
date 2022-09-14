@@ -1,6 +1,6 @@
-import Chevron from "@/components/svg/Chevron";
 import Navbar from "@/components/Navbar";
 import TradeContainer from "@/components/TradeContainer";
+import Image from "next/image";
 
 /**
  * @component
@@ -15,7 +15,8 @@ const Homepage = () => {
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="flex gap-2 items-center my-6 desktop:mb-8">
             <li>All Assets</li>
-            <Chevron /> <li>Bitcoin</li>
+            <Image src="/svg/chevron.svg" width={7} height={14} />
+            <li>Bitcoin</li>
           </ol>
         </nav>
 

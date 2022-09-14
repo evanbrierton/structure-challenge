@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { useState } from "react";
-import Logo from "./svg/Logo";
 
 const Navbar = () => {
   const userInitials = "TE";
@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <header className="flex justify-center px-4 w-full h-[79px] bg-white border-b border-gray-6 mobile:px-8 mobile:h-[69px] tablet:px-10">
       <div className="flex justify-between items-center w-full max-w-desktop">
-        <Logo />
+        <Image src="/svg/logo.svg" width={130} height={32} />
         <div>
           <nav className="flex gap-4">
             {renderButtons()}
