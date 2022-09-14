@@ -3,18 +3,10 @@ import Image from "next/image";
 type RowProps = {
   label: string;
   currency: string;
-  first?: boolean;
-  last?: boolean;
   handleClick?: () => void;
 };
 
-const Row = ({
-  label,
-  currency,
-  handleClick,
-  first = false,
-  last = false,
-}: RowProps) => {
+const Row = ({ label, currency, handleClick }: RowProps) => {
   const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
     if (event.key === "Enter") handleClick?.();
   };
@@ -25,11 +17,9 @@ const Row = ({
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
-      className={`${handleClick ? "hover:bg-gray-8 cursor-pointer" : ""} ${
-        first ? "rounded-t-xl" : ""
-      } ${
-        last ? "rounded-b-xl" : ""
-      } flex justify-between items-center px-4 w-[100%] h-[50%]`}
+      className={`${
+        handleClick ? "hover:bg-gray-8 cursor-pointer" : ""
+      } first:rounded-t-xl last:rounded-b-xl flex justify-between items-center px-4 w-[100%] h-[50%]`}
     >
       <div className="flex justify-between items-center w-[50%]">
         <span className="w-12 text-caption">{label}</span>
@@ -52,7 +42,7 @@ type Props = {
 const CurrencySelect = ({ showAssets }: Props) => {
   return (
     <div className="flex flex-col justify-around w-[330px] h-[131px] rounded-xl border border-gray-6">
-      <Row label="Buy" currency="BTC" first handleClick={showAssets} />
+      <Row label="Buy" currency="BTC" handleClick={showAssets} />
       <hr className="m-0 text-gray-6" />
       <button
         type="button"
@@ -61,7 +51,7 @@ const CurrencySelect = ({ showAssets }: Props) => {
       >
         <Image src="/svg/swap.svg" width={12} height={14} />
       </button>
-      <Row label="Pay With" currency="ETH" last />
+      <Row label="Pay With" currency="ETH" />
     </div>
   );
 };

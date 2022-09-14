@@ -21,7 +21,7 @@ const Trade = ({ showAssets }: Props) => {
   );
 
   const renderValue = () => (
-    <div className="flex justify-center items-center w-[100%] h-[152px]">
+    <div className="flex justify-center items-center w-full h-[152px]">
       <span className="text-header-3 tracking-tight">
         <span className="text-[28px]">$</span>
         <span className="relative top-1 text-[46px]">0</span>
