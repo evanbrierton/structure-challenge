@@ -11,14 +11,7 @@ const TradeContainer = () => {
   const [display, setDisplay] = useState<DisplayState>(DisplayState.TRADE);
 
   if (display === DisplayState.TRADE) {
-    return (
-      <Trade
-        showAssets={() => {
-          console.log("showAssets");
-          setDisplay(DisplayState.ASSETS);
-        }}
-      />
-    );
+    return <Trade showAssets={() => setDisplay(DisplayState.ASSETS)} />;
   }
 
   return <Assets cancel={() => setDisplay(DisplayState.TRADE)} />;
