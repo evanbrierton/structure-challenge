@@ -28,7 +28,7 @@ const Assets = ({ verb = "buy", cancel }: Props) => {
         <input
           type="text"
           placeholder="Search assets"
-          className="px-3 w-[330px] h-[57px] bg-gray-6 rounded-lg"
+          className="px-3 w-[330px] h-[57px] bg-gray-8 rounded-lg"
         />
         <div className="flex flex-col gap-5 justify-start items-start w-[330px]">
           {coins?.slice(0, 4).map((coin) => (
@@ -43,7 +43,7 @@ const Assets = ({ verb = "buy", cancel }: Props) => {
         </div>
         <button
           type="button"
-          className="w-[100%] h-[57px] text-subtitle-1 text-red-4 rounded-xl border border-gray-6"
+          className="w-[100%] h-[57px] text-subtitle-1 font-medium text-red-4 rounded-xl border border-gray-6"
           onClick={cancel}
           tabIndex={0}
         >

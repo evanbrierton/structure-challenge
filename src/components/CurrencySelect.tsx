@@ -51,7 +51,7 @@ type Props = {
 
 const CurrencySelect = ({ showAssets }: Props) => {
   return (
-    <div className="flex flex-col justify-around w-[330px] h-[131px] rounded-xl border border-gray-6">
+    <div className="flex flex-col justify-around w-[330px] h-[131px] rounded-[10px] border border-gray-6">
       <Row label="Buy" currency="BTC" first handleClick={showAssets} />
       <hr className="m-0 text-gray-6" />
       <button

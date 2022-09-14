@@ -31,7 +31,7 @@ const Trade = ({ showAssets }: Props) => {
 
   const renderWallet = () => (
     <div className="flex gap-4 justify-between items-center w-[330px]">
-      <span className="text-caption text-gray-4">ETH Wallet: $29,778.36</span>
+      <span className="text-body-3 text-gray-4">ETH Wallet: $29,778.36</span>
       <div className=" flex gap-1 justify-between items-center text-[14px]">
         <button
           type="button"
@@ -53,7 +53,7 @@ const Trade = ({ showAssets }: Props) => {
     return (
       <button
         type="button"
-        className="w-[330px] h-[57px] text-white bg-black rounded-xl"
+        className="w-[330px] h-[57px] text-white bg-black rounded-lg"
       >
         Buy
       </button>
