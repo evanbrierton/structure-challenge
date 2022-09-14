@@ -23,5 +23,8 @@
     "./packages/ui",
     "./packages/tsconfig",
     "./packages/esconfig"
-  ]
+  ],
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
 }

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CurrencySelect from "./CurrencySelect";
 
 type Props = {
@@ -34,9 +35,9 @@ const Trade = ({ showAssets }: Props) => {
       <div className=" flex gap-1 justify-between items-center text-[14px]">
         <button
           type="button"
-          className="w-[32px] h-[32px] bg-gray-8 hover:bg-gray-7 rounded-full"
+          className="flex justify-center items-center w-[32px] h-[32px] bg-gray-8 hover:bg-gray-7 rounded-full"
         >
-          C
+          <Image src="/svg/crypto.svg" width={13} height={18} />
         </button>
         <button
           type="button"
