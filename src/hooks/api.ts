@@ -1,7 +1,8 @@
+import { Instrument, APIResponse } from "@/types/api.d";
 import { useEffect, useState } from "react";
 
-const useApi = (path: string, name = "data") => {
-  const [data, setData] = useState(null);
+export const useApi = <T>(path: string) => {
+  const [data, setData] = useState<T[]>(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -10,8 +11,9 @@ const useApi = (path: string, name = "data") => {
       setLoading(true);
       try {
         const response = await fetch(path);
-        const json = await response.json();
-        setData(json);
+        const { success, result }: APIResponse<T> = await response.json();
+        if (!success) setError(true);
+        else setData(result);
       } catch {
         setError(true);
       }
@@ -21,8 +23,8 @@ const useApi = (path: string, name = "data") => {
     fetchData();
   }, [path]);
 
-  return { [name]: data, error, loading };
+  return { data, error, loading };
 };
 
-export const useStocks = () => useApi("/api/stocks", "stocks");
-export const useCoins = () => useApi("/api/coins", "coins");
+export const useStocks = () => useApi<Instrument>("/api/stocks");
+export const useCoins = () => useApi<Instrument>("/api/coins");
