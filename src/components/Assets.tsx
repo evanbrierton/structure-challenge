@@ -27,7 +27,7 @@ const Assets = ({ verb }: Props) => {
       <hr className="m-0 w-[100%] text-gray-6" />
       <div className="flex flex-col gap-5 justify-start items-start pb-[21px] w-[330px]">
         {stocks?.slice(0, 2).map((stock) => (
-          <Asset key={stock.id} {...stock} />
+          <Asset key={stock.id} {...stock} isStock />
         ))}
       </div>
       <button
