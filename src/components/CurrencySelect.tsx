@@ -57,8 +57,10 @@ const CurrencySelect = ({ showAssets }: Props) => {
       <button
         type="button"
         aria-label="swap"
-        className="absolute ml-[235px] w-8 h-8 bg-gray-8 hover:bg-gray-7 rounded-full border-[3px] border-white"
-      />
+        className="flex absolute justify-center items-center ml-[235px] w-8 h-8 bg-gray-8 hover:bg-gray-7 rounded-full border-[3px] border-white"
+      >
+        <Image src="/svg/swap.svg" width={12} height={14} />
+      </button>
       <Row label="Pay With" currency="ETH" last />
     </div>
   );
